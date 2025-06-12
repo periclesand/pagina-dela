@@ -10,7 +10,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -183,15 +183,22 @@
         .counter {
             font-size: 1.7em;
             color: #ffffff;
-            margin-top: 1px;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
         }
 
         .counter2 {
             font-size: 0.7em;
+            line-height: 0.1;
             color: #ffffff;
-            margin-top: 1px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .texto {
+            font-size: 0.7em;
+            line-height: normal;
+            color: #ffffff;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
         }
@@ -247,13 +254,12 @@
 
     <div class="counter">
         <p>💌 EU TE AMO há:</p>
-        <p id="time-counter1">0 anos, 0 meses, 0 dias</p>
+        <p class="counter2" id="time-counter1">0 anos, 0 meses, 0 dias</p>
         <p class="counter2" id="time-counter2">0 horas, 0 minutos, 0 segundos</p>
     </div>
-
-    <div class="counter2">
+    <div class="texto">
         <p>Cada sorriso seu ilumina meu dia e cada abraço seu me dá a certeza de que estou exatamente onde deveria estar! 
-        Sou grato por todos os momentos que compartilhamos, por tudo que estamos construímos juntos e pelas memórias que ainda vamos criar.</p>
+            Sou grato por todos os momentos que compartilhamos, por tudo que estamos construímos juntos e pelas memórias que ainda vamos criar.</p>
     </div>
 
     <footer>
