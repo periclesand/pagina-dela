@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Céu estrelado mais destacado */
+
+        .stars, .stars2, .stars3 {
+            position: absolute;
+            background: transparent;
+            z-index: 1;
+        }
+
+        /* Camada 1: estrelas maiores */
+        .stars::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow:
+                50px 80px #fff,
+                100px 120px #fff,
+                150px 200px #fff,
+                200px 50px #fff,
+                250px 300px #fff,
+                300px 150px #fff,
+                400px 220px #fff,
+                500px 100px #fff,
+                600px 180px #fff,
+                700px 70px #fff,
+                800px 230px #fff,
+                900px 90px #fff;
+            animation: twinkle 2s infinite alternate;
+            opacity: 0.8;
+        }
+
+        /* Camada 2: estrelas médias */
+        .stars2::after {
+            content: "";
+            position: absolute;
+            width: 1.5px;
+            height: 1.5px;
+            background: transparent;
+            box-shadow:
+                30px 400px #fff,
+                80px 500px #fff,
+                160px 450px #fff,
+                240px 600px #fff,
+                320px 550px #fff,
+                400px 500px #fff,
+                480px 650px #fff,
+                560px 480px #fff,
+                640px 600px #fff,
+                720px 520px #fff,
+                800px 580px #fff,
+                880px 500px #fff;
+            animation: twinkle 3s infinite alternate;
+            opacity: 0.7;
+        }
+
+        /* Camada 3: estrelas pequenas */
+        .stars3::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            box-shadow:
+                20px 700px #fff,
+                90px 750px #fff,
+                180px 720px #fff,
+                270px 800px #fff,
+                360px 780px #fff,
+                450px 820px #fff,
+                540px 750px #fff,
+                630px 790px #fff,
+                720px 770px #fff,
+                810px 800px #fff,
+                900px 810px #fff,
+                950px 850px #fff;
+            animation: twinkle 4s infinite alternate;
+            opacity: 0.5;
+        }
+
+        /* Animação de piscar */
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .heart {
+            position: fixed;
+            top: -50px;
+            color: #ff69b4;
+            font-size: 20px;
+            animation: fall linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+
+        h1 {
+            margin-top: 20px;
+            font-size: 1.8em;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+            color: #ff4a4a;
+        }
+
+        .carousel-container {
+            width: 80%;
+            max-width: 300px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            margin-top: 1px;
+        }
+
+        .carousel {
+            display: flex;
+            animation: slide 17s infinite;
+        }
+
+        .carousel img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 20px;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            5.88% { transform: translateX(0); }
+            11.76% { transform: translateX(-100%); }
+            17.64% { transform: translateX(-200%); }
+            23.52% { transform: translateX(-300%); }
+            29.40% { transform: translateX(-400%); }
+            35.28% { transform: translateX(-500%); }
+            41.16% { transform: translateX(-600%); }
+            47.04% { transform: translateX(-700%); }
+            52.92% { transform: translateX(-800%); }
+            58.80% { transform: translateX(-900%); }
+            64.68% { transform: translateX(-1000%); }
+            70.56% { transform: translateX(-1100%); }
+            76.44% { transform: translateX(-1200%); }
+            82.32% { transform: translateX(-1300%); }
+            88.20% { transform: translateX(-1400%); }
+            94.08% { transform: translateX(-1500%); }
+            100% { transform: translateX(0); }
+        }
+
+        .counter {
+            font-size: 1.7em;
+            color: #ffffff;
+            margin-top: 1px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .counter2 {
+            font-size: 0.7em;
+            color: #ffffff;
+            margin-top: 1px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+            margin-top: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.8em;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <span class="heart" style="left: 10%; animation-duration: 8s; font-size: 18px;">❤️</span>
+    <span class="heart" style="left: 25%; animation-duration: 10s; font-size: 22px;">💖</span>
+    <span class="heart" style="left: 40%; animation-duration: 9s; font-size: 16px;">💕</span>
+    <span class="heart" style="left: 55%; animation-duration: 7s; font-size: 20px;">❤️</span>
+    <span class="heart" style="left: 70%; animation-duration: 11s; font-size: 24px;">💗</span>
+    <span class="heart" style="left: 85%; animation-duration: 9s; font-size: 20px;">💞</span>
+
+    <h1>Feliz dia dos namorados!</h1>
+    <div class="carousel-container">
+      <div class="carousel">
+          <img src="images/foto0.jpeg" alt="">
+          <img src="images/foto00.jpeg" alt="">
+          <img src="images/foto01.jpeg" alt="">
+          <img src="images/foto02.jpeg" alt="">
+          <img src="images/foto03.jpeg" alt="">
+          <img src="images/foto04.jpeg" alt="">
+          <img src="images/foto05.jpeg" alt="">
+          <img src="images/foto06.jpeg" alt="">
+          <img src="images/foto07.jpeg" alt="">
+          <img src="images/foto08.jpeg" alt="">
+          <img src="images/foto09.jpeg" alt="">
+          <img src="images/foto10.jpeg" alt="">
+          <img src="images/foto11.jpeg" alt="">
+          <img src="images/foto12.jpeg" alt="">
+          <img src="images/foto13.jpeg" alt="">
+          <img src="images/foto14.jpeg" alt="">
+          <img src="images/foto15.jpeg" alt="">
+        <!-- Adicione mais fotos conforme necessário -->
+      </div>
+    </div>
+
+    <div class="counter">
+        <p>💌 EU TE AMO há:</p>
+        <p id="time-counter1">0 anos, 0 meses, 0 dias</p>
+        <p class="counter2" id="time-counter2">0 horas, 0 minutos, 0 segundos</p>
+    </div>
+
+    <footer>
+        ___________________________________________________<br>
+        Cada sorriso seu ilumina meu dia e cada abraço seu me dá a certeza de que estou exatamente onde deveria estar! 
+        Sou grato por todos os momentos que compartilhamos, por tudo que estamos construímos juntos e pelas memórias que ainda vamos criar.<br>
+        P & B ❤️
+    </footer>
+
+    <script>    
+       function updateCounter() {
+        const startDate = new Date("2022-02-11T21:00:00");
+        const now = new Date();
+
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+        }
+        if (minutes < 0) {
+            minutes += 60;
+            hours--;
+        }
+        if (hours < 0) {
+            hours += 24;
+            days--;
+        }
+        if (days < 0) {
+            const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += previousMonth.getDate();
+            months--;
+        }
+        if (months < 0) {
+            months += 12;
+            years--;
+        }
+
+        // Atualiza os elementos na página
+        document.getElementById("time-counter1").textContent = `📅 ${years} anos, ${months} meses, ${days} dias`;
+        document.getElementById("time-counter2").textContent = `⏳ ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+    }
+
+        setInterval(updateCounter, 1000);
+    </script>
+</body>
+</html>
